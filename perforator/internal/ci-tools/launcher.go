@@ -449,8 +449,10 @@ func mainImpl(ctx context.Context) error {
 			{
 				download: &sftpCommandDownload {
 					src: "/home/builder/job-exit-code",
-					dst: fmt.Sprintf("%s/job-exit-code", config.workDir),
+					dst: fmt.Sprintf("%s/job-exit-code", config.localWorkDir),
 				},
+			},
+			{
 				download: &sftpCommandDownload{
 					src: config.remoteOutPath,
 					dst: config.outPath,

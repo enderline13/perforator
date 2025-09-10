@@ -447,7 +447,7 @@ func mainImpl(ctx context.Context) error {
 		}
 		err = runSFTP(ctx, connOpts, []sftpCommand{
 			{
-				download: &sftpCommandDownload {
+				download: &sftpCommandDownload{
 					src: "/home/builder/job-exit-code",
 					dst: fmt.Sprintf("%s/job-exit-code", config.localWorkDir),
 				},

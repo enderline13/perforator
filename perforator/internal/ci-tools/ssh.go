@@ -163,6 +163,8 @@ func runSFTP(ctx context.Context, opts sshSessionOptions, commands []sftpCommand
 			raw, err = c.upload.serialize()
 		case c.progress != nil:
 			raw, err = c.progress.serialize()
+		case c.download != nil:
+			raw, err = c.download.serialize()
 		default:
 			err = fmt.Errorf("unknown command %+v", c)
 		}

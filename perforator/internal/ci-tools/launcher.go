@@ -467,6 +467,9 @@ func mainImpl(ctx context.Context) error {
 			break
 		}
 	}
+	if !ok {
+		return fmt.Errorf("failed to download build artifacts: retry attempts exhausted")
+	}
 
 	return nil
 

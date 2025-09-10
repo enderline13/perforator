@@ -18,4 +18,8 @@ export {{ .Name }}='{{ .Value }}'
 
 # call job script
 
+set +e
 bash /home/builder/job.sh
+
+echo $? > /home/builder/job-exit-code
+set -e

@@ -16,6 +16,5 @@ else
 fi
 
 (cd ~/src && ./ya test -T -DCI=github -DCONSISTENT_BUILD=yes -DCONSISTENT_DEBUG=yes --bazel-remote-store --bazel-remote-base-uri=${BAZEL_URI} ${BAZEL_PUT_ARGS} ./perforator)
-#(cd ~/src && ./ya test -T -DCI=github -DCONSISTENT_BUILD=yes -DCONSISTENT_DEBUG=yes ./perforator)
 
 df

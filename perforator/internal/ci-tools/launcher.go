@@ -447,11 +447,15 @@ func mainImpl(ctx context.Context) error {
 		}
 		err = runSFTP(ctx, connOpts, []sftpCommand{
 			{
-			download: &sftpCommandDownload{
-				src: config.remoteOutPath,
-				dst: config.outPath,
+				download: &sftpCommandDownload {
+					src: "/home/builder/job-exit-code",
+					dst: fmt.Sprintf("%s/job-exit-code", config.workDir),
+				},
+				download: &sftpCommandDownload{
+					src: config.remoteOutPath,
+					dst: config.outPath,
+				},
 			},
-		},
 		})
 		if err != nil {
 			logger.WarnContext(ctx, "Failed to download build artifacts", "error", err, "attempt", i)
